@@ -16,5 +16,8 @@ pipeline {
                 }
             }
         }
+        stage('Package Artifacts') {
+            archiveArtifacts artifacts: '*', excludes: '.git/', fingerprint: true, onlyIfSuccessful: true
+        }
     }
 }
